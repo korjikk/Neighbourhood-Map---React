@@ -4,7 +4,12 @@
 
 .App-header {
   background-color: #222;
-  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-footer {
+  background-color: #222;
   padding: 20px;
   color: white;
 }
@@ -13,7 +18,40 @@
   font-size: 1.5em;
 }
 
+#map {
+  height: 720px;
+}
 
-#map{
-  height:500px;
+main {
+  padding-right: 0px!important;
+}
+
+.row {
+  margin-right: 0;
+}
+
+.locationListWrapper ul {
+  list-style: none;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  background-color: #f1f1f1;
+}
+
+.locationListWrapper input {
+  width: 100%;
+  padding-top: 5px;
+}
+
+.locationListWrapper li {
+  padding: 10px 15px;
+  border-bottom: 2px solid white;
+}
+
+/* Change the link color on hover */
+
+.locationListWrapper li:hover {
+  background-color: cornflowerblue;
+  color: white;
+  cursor: pointer;
 }

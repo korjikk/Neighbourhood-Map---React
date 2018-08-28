@@ -7,5 +7,5 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
-//TODO
-//registerServiceWorker();
+//registers the service worker for the offline caching
+registerServiceWorker();
