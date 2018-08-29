@@ -19,7 +19,7 @@
 }
 
 #map {
-  height: 720px;
+  min-height: calc(100vh - 152px);
 }
 
 main {
@@ -27,7 +27,7 @@ main {
 }
 
 .row {
-  margin-right: 0;
+  margin-right: 0!important;
 }
 
 .locationListWrapper ul {
@@ -54,4 +54,8 @@ main {
   background-color: cornflowerblue;
   color: white;
   cursor: pointer;
+}
+
+.infowindowWikiText {
+  font-size: 1.3em;
 }

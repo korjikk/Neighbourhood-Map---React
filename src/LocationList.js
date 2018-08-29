@@ -18,18 +18,18 @@ class LocationList extends Component {
     render() {
         const { locations } = this.props;
         return (
-            <main id="maincontent" role="main" class='col-md-3'>
-                <div className="locationListWrapper">
+            <main id="maincontent" role="main" className='col-md-3'>
+                <div className="locationListWrapper" role="navigation" aria-label="Locations filter and locations list">
                     <input
                         aria-label="Filter locations by text"
                         type="text"
                         placeholder="Filter locations"
                         value={this.state.filterQuery}
                         onChange={this.onSearch} />
-                    <ul className="locationsList">
+                    <ul className="locationsList" role="menu" aria-label="Locations list">
                         {locations.map((location) =>
-                            <li key={location.title} onClick={() => this.props.onListItemClicked(location.title)}>
-                                <div>{location.title}</div>
+                            <li key={location.title} onClick={() => this.props.onListItemClicked(location.title)} onKeyPress={() => this.props.onListItemClicked(location.title)} tabIndex="0" role="menuitem">
+                                {location.title}
                             </li>
                         )}
                     </ul>

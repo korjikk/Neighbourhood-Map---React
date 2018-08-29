@@ -10,7 +10,7 @@
 
 **Note**: This application uses the integrated Service Worker from the create-react-app. It doesn't work in development environment, so, in order for it to work, you should do the build, and not just use npm start. (Reffer to the steps above).
 
-#Used API's
-1. **Google Maps API**, do display the map, markers and infowindows.
+# Used API's
+1. **Google Maps API**, to display the map, markers and infowindows.
 2. **Wikipedia API**, to fetch the location details
 

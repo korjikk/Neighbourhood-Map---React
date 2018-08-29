@@ -15,6 +15,7 @@ class MapContainer extends Component {
 
   //load the Google Maps script when the component mounts
   componentDidMount() {
+    window.gm_authFailure = this.gm_authFailure;
     window.initMap = this.initMap;
     loadMapScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyAUB3B2Vp2AFLsAQesz3PiNSrINPRjWU9E&callback=initMap');
   }
@@ -56,6 +57,12 @@ class MapContainer extends Component {
       this.locations = this.props.locations ? this.props.locations : [];
     }
 
+  }
+
+  //Callback function that shows an alert in case of Google Maps authentication error
+  gm_authFailure() {
+    window.alert("Google Maps error!");
+    console.log("MAPS ERROR");
   }
 
   //initialization of the map, occurs just on the first loading
@@ -135,7 +142,7 @@ class MapContainer extends Component {
     }
     //sets the content, binds the marker to the infowindow and opens it
     parentScope.getDataForInfowindow(marker.title).then((infowindowContent) => {
-      infowindow.setContent(infowindowContent);
+      infowindow.setContent('<div class="infowindowWikiText">' + infowindowContent + '</div><div class="float-right">Data fetched from Wikipedia.</div>');
       infowindow.marker = marker;
       infowindow.open(parentScope.map, marker);
 
@@ -160,6 +167,7 @@ function loadMapScript(mapURL) {
   var configuredScript = window.document.createElement("script");
   configuredScript.src = mapURL;
   configuredScript.async = true;
+  configuredScript.onerror = function () { window.alert("Google Maps API failed to load data!"); }
   scriptElement.parentNode.insertBefore(configuredScript, scriptElement);
 }
 
